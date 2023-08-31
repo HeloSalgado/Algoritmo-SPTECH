@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+<body>
+    Insira a quantidade de mulheres: <input type="number" id="quant_mulher"><br>
+    Insira a quamtidade de homens: <input type="number" id="quant_homem"><br>
+    <button onclick="ligarElevador()">Ligar elevador</button>
+    <div id="pesoTotal"></div>
+</body>
+</html>
+<script>
+    function ligarElevador(){
+        var mulheres = Number(quant_mulher.value) * 70;
+        var homens = Number(quant_homem.value) * 90;
+        var pesoElevador = mulheres + homens
+
+        if(pesoElevador <= 500){
+            pesoTotal.innerHTML =  `
+            Elevador vai se mover, pois está com ${pesoElevador}kg 
+            `
+        } else{
+            pesoElevador = pesoElevador - 500
+            pesoTotal.innerHTML = `
+            Alguém precisa descer. Precisa perder ${pesoElevador}kg para mover o elevador 
+            `
+        }
+    }
+</script>

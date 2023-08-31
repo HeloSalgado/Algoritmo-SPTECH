@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    Sabor da pizza: <input type="text" id="sabor_pizza"><br>
+    Preço da pizza: <input type="text" id="preço_pizza"><br>
+    Quantidade de amigos: <input type="text" id="quant_amigos"><br>
+    <button onclick="valorPorAmigo()">Ver valor por amigo</button>
+    <div id="valorpizza"></div>
+    
+</body>
+</html>
+<script>
+    function valorPorAmigo(){
+        var sabor = sabor_pizza.value
+        var preço = Number(preço_pizza.value) + 0.10
+        var amigos = Number(quant_amigos.value)
+        var calculo = preço / amigos
+
+        valorpizza.innerHTML = `
+        Cada amigo vai colaborar com R$${calculo} para a pizza de ${sabor}.
+        `
+    }
+</script>

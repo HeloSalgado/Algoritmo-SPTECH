@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+<body>
+    Digite o valor da primeira nota: <input type="text" id="primeira_nota"><br>
+    Digite o valor da segunda nota: <input type="text" id="segunda_nota"><br>
+    Digite o valor da tercira nota: <input type="text" id="terceira_nota"><br>
+    <button onclick="analisarDesempenho()">Analisar desempenho</button>
+    <div id="resultado_Media"></div>
+    <div id="desempenho"></div>
+</body>
+</html>
+<script>
+    function analisarDesempenho(){
+        var primeiraNota = Number(primeira_nota.value)
+        var segundaNota = Number(segunda_nota.value)
+        var terceiraNota = Number(terceira_nota.value)    
+        var media = (primeiraNota + segundaNota + terceiraNota) / 3
+
+        resultado_Media.innerHTML = `
+        Sua média foi de ${media}
+        `
+        if (media > 9.4){
+            desempenho.innerHTML = `
+            Parabéns, você é fora de série!
+            `
+        }
+    }
+</script>

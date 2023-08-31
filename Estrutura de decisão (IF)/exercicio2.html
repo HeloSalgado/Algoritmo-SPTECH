@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    Quantidades de latinhas por dia: <input id="qtd_latinhas"><br>
+    <button onclick="quantidadeRefris()">Quantos refris?</button>
+    <div id="total_latinhas"></div>
+    <div id="diabetes"></div>
+</body>
+</html>
+<script>
+    function quantidadeRefris(){
+        var qtdLatinhas = qtd_latinhas.value
+        var qtdAno = qtdLatinhas * 365
+
+        total_latinhas.innerHTML = `
+        Você consome ${qtdAno} de latinhas por ano
+        `
+
+        if (qtdAno >= 500){
+            diabetes.innerHTML = `
+            Cuidado com a diabetes!
+            `
+        }
+    }
+</script>

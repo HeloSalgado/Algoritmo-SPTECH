@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07</title>
+</head>
+<body>
+    Digite o valor da passagem: <input type="number" id="valor_passagem"><br>
+    Digite quantas viagens fará por mês: <input type="number" id="quant_viagens"><br>
+    <button onclick="economia()">Ver economia</button>
+
+</body>
+</html>
+<script>
+    function economia(){
+        var passagem = valor_passagem.value
+        var viagens = quant_viagens.value
+        alert(`Você economizará R$${(passagem / 2) * viagens} por mês`)
+    }
+</script>

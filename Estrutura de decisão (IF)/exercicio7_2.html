@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+<body>
+    Nome do passageiro: <input type="text" id="nome_passageiro"><br>
+    Distância (em km) do local atual para o destino: <input type="text" id="distancia_km"><br>
+    Bandeira da corrida: <input type="number" min="1" max="3" id="input_bandeira"><br>
+    Horário da corrida: <input type="number" min="0" max="23" id="input_horario"><br>
+    <button onclick="calcularCorrida()">Calcular corrida</button>
+    <div id="resultadoCorrida"></div>
+</body>
+</html>
+<script>
+    function calcularCorrida(){
+        var passageiro = nome_passageiro.value;
+        var distancia = Number(distancia_km.value);
+        var bandeira = Number(input_bandeira.value);
+        var horario = Number(input_horario.value);
+        var valorNominal = 1.25; 
+        var valorTotal = 0;
+        
+
+        if(horario <= 23){
+            valorTotal = valorNominal * distancia;
+            valorTotal += valorTotal * (bandeira * 0.15);
+        }
+
+        if(horario <= 12){
+            valorTotal = valorNominal * distancia;
+            valorTotal += valorTotal * (bandeira * 0.10);
+        }
+        
+        if(horario <= 6){
+            valorTotal = valorNominal * distancia;
+            valorTotal += valorTotal * (bandeira * 0.05);
+        }
+
+        resultadoCorrida.innerHTML = `
+        Olá ${passageiro} sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${valorTotal}
+        `
+       
+    }
+</script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    Digite o nome do seu time: <input type="text" id="input_time"><br>
+    Digite quantos mundiais ele tem: <input type="text" id="input_mundi"><br>
+    <button onclick="amoMeuTime()">Amo meu time</button>
+    
+</body>
+</html>
+<script>
+    function amoMeuTime(){
+        var time = input_time.value
+        var mundiais = input_mundi.value
+        alert(`O time ${time} tem ${mundiais} mundiais da FIFA`)
+    }
+</script>

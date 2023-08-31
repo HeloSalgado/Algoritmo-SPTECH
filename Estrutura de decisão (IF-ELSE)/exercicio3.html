@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+<body>
+    Insira a quantidade de chocolate comprados: <input type="number" id="quant_choco"><br>
+    <button onclick="compra()">Compra</button>
+    <div id="valor_compra"></div>
+</body>
+</html>
+<script>
+    function compra(){
+        var quantidadeChocolate = Number(quant_choco.value);
+        var valorCompra = quantidadeChocolate * 3;
+
+        if (quantidadeChocolate > 12){
+            valorCompra = quantidadeChocolate * 2.5
+            valor_compra.innerHTML = `o valor da sua compra foi de ${valorCompra}`
+        } else{
+            valor_compra.innerHTML = `o valor da sua compra foi de ${valorCompra}`
+        }
+    }
+</script>

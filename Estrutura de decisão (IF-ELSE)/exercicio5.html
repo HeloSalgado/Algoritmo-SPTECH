@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+<body>
+    Insira a primeira nota: <input type="number" id="primeira_nota"><br>
+    Insira a segunda nota: <input type="number" id="segunda_nota"><br>
+    <button onclick="verificarSituacao()">Verificar situação</button>
+    <div id="resultadoMedia"></div>
+</body>
+</html>
+<script>
+    function verificarSituacao(){
+        var primeiraNota = Number(primeira_nota.value);
+        var segundaNota = Number(segunda_nota.value);
+        var media = (primeiraNota + segundaNota) / 2
+
+        if(media >= 6){
+            resultadoMedia.innerHTML = `Parabéns, aprovado!`
+        } else{
+            resultadoMedia.innerHTML = `Tente outras vez...`
+        }
+    }
+</script>

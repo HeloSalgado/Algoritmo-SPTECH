@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+<body>
+    <h3>Equipe Lantra</h3>
+    Digite o valor da pizza: <input type="number" id="valor_pizza"><br>
+    Digite a quantidade da pessoas: <input type="number" id="quant_pessoas"><br>
+    <button onclick="pizza()">#lovePizza</button>
+</body>
+</html>
+<script>
+    function pizza(){
+        var valor = valor_pizza.value
+        var pessoas = quant_pessoas.value
+        alert(`Cada um dos ${pessoas} amigos vai pagar R$${valor / pessoas}`)
+    }
+</script>
