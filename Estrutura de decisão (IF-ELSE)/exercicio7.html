@@ -20,12 +20,12 @@
 
         if(pesoElevador <= 500){
             pesoTotal.innerHTML =  `
-            Elevador vai se mover, pois está com ${pesoElevador}kg 
+            <h4 style="color:green">Elevador vai se mover, pois está com ${pesoElevador}kg</h4> 
             `
         } else{
             pesoElevador = pesoElevador - 500
             pesoTotal.innerHTML = `
-            Alguém precisa descer. Precisa perder ${pesoElevador}kg para mover o elevador 
+            <h4 style="color:red">Alguém precisa descer. Precisa perder ${pesoElevador}kg para mover o elevador</h4> 
             `
         }
     }
