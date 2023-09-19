@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio colisão</title>
+</head>
+
+<body>
+    X0: <input type="number" id="R1_x0"><br>
+    Y0: <input type="number" id="R1_y0"><br>
+    X1: <input type="number" id="R1_x1"><br>
+    Y1: <input type="number" id="R1_y1"><br><br>
+
+    X0: <input type="number" id="R2_x0"><br>
+    Y0: <input type="number" id="R2_y0"><br>
+    X1: <input type="number" id="R2_x1"><br>
+    Y1: <input type="number" id="R2_y1"><br><br>
+
+    <button onclick="calcularColisao()">Calcular colisão</button><br>
+
+    <div id="div_intersecao"></div>
+
+</body>
+
+</html>
+<script>
+    function calcularColisao() {
+        var r1x0 = Number(R1_x0.value);
+        var r1y0 = Number(R1_y0.value);
+        var r1x1 = Number(R1_x1.value);
+        var r1y1 = Number(R1_y1.value);
+
+        var r2x0 = Number(R2_x0.value);
+        var r2y0 = Number(R2_y0.value);
+        var r2x1 = Number(R2_x1.value);
+        var r2y1 = Number(R2_y1.value);
+
+        if (r2x0 <= r1x1) {
+            if (r2y0 <= r1y1) {
+                if (r1x0 <= r2x1) {
+                    if (r1y0 <= r2y1) {
+                        div_intersecao.innerHTML = `Houve colisão`
+                    } else {
+                        div_intersecao.innerHTML = `Não houve colisão`
+                    }
+                } else {
+                    div_intersecao.innerHTML = `Não houve colisão`
+                }
+            } else {
+                div_intersecao.innerHTML = `Não houve colisão`
+            }
+        } else {
+            div_intersecao.innerHTML = `Não houve colisão`
+        }
+    }
+</script>

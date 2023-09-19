@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If 9</title>
+</head>
+
+<body>
+    Qual sua meta de economia: <input id="meta_economia"><br>
+    Quanto tem guardado: <input id="qtd_guardado"><br>
+    <button onclick="analisarEconomia()">Analisar economia</button>
+    <div id="metaAlcancada"></div>
+</body>
+
+</html>
+<script>
+    function analisarEconomia() {
+        var meta = Number(meta_economia.value);
+        var qtdGuardado = Number(qtd_guardado.value);
+        var diferencaUltrapassada = qtdGuardado - meta;
+        var diferencaNaoAlcancou = meta - qtdGuardado;
+
+
+        if (qtdGuardado == meta) {
+            metaAlcancada.innerHTML = `Parabéns, meta alcançada!<br>`
+        } else if (qtdGuardado > meta) {
+                metaAlcancada.innerHTML += `Meta ultrapassada em ${diferencaUltrapassada}`
+        } else {
+            metaAlcancada.innerHTML = `Força! Ainda em busca da meta! Falta ${diferencaNaoAlcancou}`
+        }
+    }
+</script>

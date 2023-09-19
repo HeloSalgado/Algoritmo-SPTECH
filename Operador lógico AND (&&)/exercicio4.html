@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação lógica 4</title>
+</head>
+<body>
+    Horário que costuma acessar: <input id="horario_acesso"><br>
+    <button onclick="analisarRecomendacao()">Ver recomendação</button>
+    <div id="recomendacao"></div>
+</body>
+</html>
+<script>
+    function analisarRecomendacao(){
+        var horario = Number(horario_acesso.value);
+
+        if (horario >= 19 && horario <= 21) {
+            recomendacao.innerHTML = `Não é recomendável que você assista sua série favorita no horário ${horario}!`
+        } else {
+            recomendacao.innerHTML = `O horário ${horario} é adequado para assistir sua série favorita!`
+        }
+    }
+</script>

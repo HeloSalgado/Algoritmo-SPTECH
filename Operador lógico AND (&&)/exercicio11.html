@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação lógica 11</title>
+</head>
+<body>
+    Quantidade de passagens: <input id="qtd_passagens"><br>
+    <button onclick="comprar()">Comprar</button> 
+    <div id="passagens_validas"></div>
+</body>
+</html>
+<script>
+    function comprar(){
+        var passagens = Number(qtd_passagens.value);
+
+        if (passagens >= 8 && passagens <= 50) {
+            if (passagens <= 19) {
+                var desconto = passagens * (4.40 * 0.97)
+                passagens_validas.innerHTML = `Total a pagar: R$${desconto}`
+            } else if (passagens <= 49){
+                var desconto = passagens * (4.40 * 0.95)
+                passagens_validas.innerHTML = `Total a pagar: R$${desconto}`
+            } else {
+                var desconto = passagens * (4.40 * 0.93)
+                passagens_validas.innerHTML = `Total a pagar: R$${desconto}`
+            }
+        } else {
+            alert(`Quantidade inválida para o Fidelidade!`)
+        }
+    }
+</script>

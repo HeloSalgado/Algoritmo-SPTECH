@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação lógica 8</title>
+</head>
+<body>
+    Login: <input id="login_usuario"><br>
+    Senha: <input type="password" id="senha_usuario"><br>
+    Código de segurança: <input id="codigo_usuario"><br>
+    <button onclick="entrar()">Entrar</button>
+</body>
+</html>
+<script>
+    function entrar(){
+        var login = login_usuario.value;
+        var senha = senha_usuario.value;
+        var codigo = codigo_usuario.value;
+
+        if (login == 'SPTech' && senha == 'digital' && codigo == '123') {
+            alert(`Usuário autenticado com sucesso`);
+        } else {
+            alert(`Falha na autenticação`);
+        }
+    }
+</script>

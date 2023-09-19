@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If 2</title>
+</head>
+
+<body>
+    Insira sua renda familiar: <input id="renda_familiar"><br>
+    <button onclick="analisarRenda()">Analisar Renda</button>
+    <div id="classes"></div>
+</body>
+
+</html>
+<script>
+    function analisarRenda() {
+        var renda = Number(renda_familiar.value);
+
+        if (renda <= 250) {
+            classes.innerHTML = `Classe E`
+        } else if (renda <= 900) {
+            classes.innerHTML = `Classe D`
+        } else if (renda <= 2500) {
+            classes.innerHTML = `Classe C`
+        } else if (renda <= 9500) {
+            classes.innerHTML = `Classe B`
+        } else {
+            classes.innerHTML = `Classe A`
+        }
+    }
+</script>

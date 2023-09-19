@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If 7</title>
+</head>
+<body>
+    Insira valor economizado: <input id="valor_economizado"><br>
+    <button onclick="poderDeCompra()">Poder de compra</button>
+    <div id="verificarCompra"></div>
+</body>
+</html>
+<script>
+    function poderDeCompra(){
+        var economia = Number(valor_economizado.value);
+
+        if (economia <= 0) {
+            verificarCompra.innerHTML = `Nada de compras :(`
+        } else if (economia <= 100) {
+            verificarCompra.innerHTML = `Viajem de ida e volta pra Praia Grande <br>`
+        } else if (economia < 4000) {
+            verificarCompra.innerHTML = `
+            Viajem de ida e volta pra Praia Grande <br>
+            Uma boa moto usada <br>`
+        } else {
+            verificarCompra.innerHTML = `
+            Viajem de ida e volta pra Praia Grande <br>
+            Uma boa moto usada <br>
+            Mais alguma bobagem legal `
+        }
+    }
+</script>

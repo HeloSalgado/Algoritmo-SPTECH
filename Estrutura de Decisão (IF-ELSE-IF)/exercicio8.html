@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If 8</title>
+</head>
+<body>
+    Quantos pães tem comido por dia: <input id="paes_comidos"><br>
+    Quantos pacotes de bolacha recheada tem comido por dia: <input id="bolachas_comidas"><br>
+    Quantos copos de achocolatado bebe por dia: <input id="achocolatado_ingeridos"><br>
+    <button onclick="verificarCalorias()">Verificar calorias</button>
+    <div id="caloriasVerificadas"></div>
+</body>
+</html>
+<script>
+    function verificarCalorias(){
+        var qtdPao = Number(paes_comidos.value);
+        var qtdBolacha = Number(bolachas_comidas.value);
+        var qtdAchocolatado = Number(achocolatado_ingeridos.value);
+
+        var caloriaPao = qtdPao * 50;
+        var caloriaBolacha = qtdBolacha * 80;
+        var caloriaAchocolatado = qtdAchocolatado * 70;
+
+        var totalCaloria = caloriaPao + caloriaBolacha + caloriaAchocolatado;
+
+        if (totalCaloria < 200) {
+            caloriasVerificadas.innerHTML = `Parabéns, vai ficar em forma !`
+        } else if (totalCaloria <= 400) {
+            caloriasVerificadas.innerHTML = `Cuidado, vai ficar menos saudável !`
+        } else {
+            caloriasVerificadas.innerHTML = `Alerta crítico de saúde !!!`
+        }
+
+    }
+</script>

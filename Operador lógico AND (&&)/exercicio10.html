@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação lógica 10</title>
+</head>
+<body>
+    Sua idade: <input id="idade_usuario"><br>
+    Seu salário: <input id="salario_usuario"><br>
+    <button onclick="analisarSituacao()">Analisar situação</button>
+    <div id="situacaoAnalisada"></div>
+</body>
+</html>
+<script>
+    function analisarSituacao(){
+        var idade = Number(idade_usuario.value);
+        var salario = salario_usuario.value;
+
+        if (idade < 18 && salario < 2500) {
+            situacaoAnalisada.innerHTML = `Menor de idade e liso`
+        } else if (idade < 18) {
+            situacaoAnalisada.innerHTML = `Menor de idade e ostentação`
+        } else if (salario < 3500) {
+            situacaoAnalisada.innerHTML = `Maior de idade e liso`
+        } else if (salario <= 7000) {
+            situacaoAnalisada.innerHTML = `Maior de idade e ostentação`
+        } else {
+            situacaoAnalisada.innerHTML = `Maior de idade e mega ostentação`
+        }
+    }
+</script>

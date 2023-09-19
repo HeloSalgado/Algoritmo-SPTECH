@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação lógica 2</title>
+</head>
+<body>
+    Renda individual: <input id="renda_individual"><br>
+    Renda Familiar: <input id="renda_familiar"><br>
+    <button onclick="verificarAjuda()">Verificar ajuda</button>
+</body>
+</html>
+<script>
+    function verificarAjuda(){
+        var rendaIndividual = Number(renda_individual.value);
+        var rendaFamiliar = Number(renda_familiar.value);
+
+        if (rendaIndividual <= 1050 && rendaFamiliar <= 2100) {
+            alert(`Você terá direito!`);
+        } else {
+            alert(`Você NÃO terá direito`);
+        }
+    }
+</script>

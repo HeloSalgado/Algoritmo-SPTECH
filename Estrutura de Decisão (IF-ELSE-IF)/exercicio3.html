@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If 3</title>
+</head>
+<body>
+    Insira a temperatura: <input id="input_temperatura"><br>
+    <button onclick="analisarSituacao()">Analisar situação</button>
+    <div id="situacao"></div>
+</body>
+</html>
+<script>
+    function analisarSituacao(){
+        var temperatura = Number(input_temperatura.value);
+
+        if (temperatura < 14) {
+            situacao.innerHTML = `Congelante`
+        } else if (temperatura <= 21) {
+            situacao.innerHTML = `Com frio`
+        } else if (temperatura <= 24) {
+            situacao.innerHTML = `Confortável`
+        } else if (temperatura <= 31) {
+            situacao.innerHTML = `Com calor`
+        } else {
+            situacao.innerHTML = `Calor escaldante`
+        }
+    }
+</script>

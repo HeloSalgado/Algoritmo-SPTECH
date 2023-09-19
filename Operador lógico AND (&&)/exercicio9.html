@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação lógica 9</title>
+</head>
+
+<body>
+    Altura inicial: <input id="altura_inicial"><br>
+    Altura final: <input id="altura_final"><br>
+    Nome do piloto: <input id="nome_piloto"><br>
+    Altura do piloto: <input id="altura_piloto"><br>
+    <button onclick="analisarIntervalo()">Analisar intervalo</button>
+    <div id="mensagemCandidato"></div>
+</body>
+
+</html>
+<script>
+    function analisarIntervalo() {
+        var alturaInicial = Number(altura_inicial.value);
+        var alturaFinal = Number(altura_final.value);
+        var nome = nome_piloto.value;
+        var altura = Number(altura_piloto.value);
+
+
+        if (alturaInicial < 1 && alturaInicial > alturaFinal) {
+            mensagemCandidato.innerHTML = `Insira uma altura inicial ou final válida <br>`;
+        } else if (altura >= alturaInicial && altura <= alturaFinal) {
+            mensagemCandidato.innerHTML += `O candidato ${nome} com altura de ${altura} participará do processo de seleção de piloto<br>`;
+        } else {
+            mensagemCandidato.innerHTML += `Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos<br>`;
+        }
+    }
+</script>

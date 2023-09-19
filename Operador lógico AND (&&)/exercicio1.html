@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador lógico 1</title>
+</head>
+<body>
+    Temperatura Atual: <input id="temperatura_atual"><br>
+    <button onclick="verSituacao()">Ver situação</button>
+</body>
+</html>
+<script>
+    function verSituacao(){
+        var temperatura = Number(temperatura_atual.value);
+
+        if (temperatura >= 21 && temperatura <=24) {
+            alert(`Temperatura confortável :)`);
+        } else {
+            alert(`Temperatura DESCONFORTÁVEL :(`);
+        }
+    }
+</script>
