@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 4 Algoritmo</title>
+</head>
+<body>
+    Digite o 1° número: <input type="number" id="primeiro_num"><br>
+    Digite o 2° número: <input type="number" id="segundo_num"><br><br>
+    <button onclick="multiplicar()"> Multiplicar </button>
+    <button onclick="dividir()"> Dividir </button>
+    <button onclick="subtrair()"> Subtrair </button>
+    <button onclick="somar()"> Somar </button>
+</body>
+</html>
+
+<script>
+    function multiplicar() {
+        var primeiroNumero = primeiro_num.value
+        var segundoNumero = segundo_num.value
+        var resultado = primeiroNumero * segundoNumero
+        alert(`O resultado da multiplicação de ${primeiroNumero} por ${segundoNumero} é: ${resultado}`)
+    }
+
+    function dividir() {
+        var primeiroNumero = primeiro_num.value
+        var segundoNumero = segundo_num.value
+        var resultado = primeiroNumero / segundoNumero
+        alert(`O resultado da divisão é: ${resultado}`)
+    }
+
+    function subtrair() {
+        var primeiroNumero = primeiro_num.value
+        var segundoNumero = segundo_num.value
+        var resultado = primeiroNumero - segundoNumero
+        alert(`O resultado da subtração é: ${resultado}`)
+    }
+
+    function somar() {
+        var primeiroNumero = Number(primeiro_num.value)
+        var segundoNumero = Number(segundo_num.value)
+        var resultado = primeiroNumero + segundoNumero
+        alert(`O resultado da soma é: ${resultado}`)
+    }
+</script>
