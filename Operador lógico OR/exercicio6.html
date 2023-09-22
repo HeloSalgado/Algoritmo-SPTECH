@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador lógico ||</title>
+</head>
+<body>
+    <h3>Calculadora de cansaço do aluno SPTech.</h3><br>
+    Meio de transporte: <input id="meio_transporte"><br>
+    <button onclick="calcularCansaço()">Calcular cansaço</button>
+</body>
+</html>
+<script>
+    function calcularCansaço(){
+        var transporte = meio_transporte.value;
+
+        if (transporte == 'Carro' || transporte == 'Bicicleta') {
+            alert(`Tá tranquilo ...`)
+        } else if (transporte == 'Ônibus' || transporte == 'Lotação') {
+            alert(`Vish ... vive cansado.`)
+        } else {
+            alert(`Um pouco cansado`)
+        }
+    }
+</script>

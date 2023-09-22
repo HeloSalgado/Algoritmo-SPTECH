@@ -25,12 +25,14 @@
         var altura = Number(altura_piloto.value);
 
 
-        if (alturaInicial < 1 && alturaInicial > alturaFinal) {
-            mensagemCandidato.innerHTML = `Insira uma altura inicial ou final válida <br>`;
-        } else if (altura >= alturaInicial && altura <= alturaFinal) {
-            mensagemCandidato.innerHTML += `O candidato ${nome} com altura de ${altura} participará do processo de seleção de piloto<br>`;
+        if (alturaInicial > 1 && alturaFinal > alturaInicial) {
+            if (altura >= alturaInicial && altura <= alturaFinal) {
+                mensagemCandidato.innerHTML += `O candidato ${nome} com altura de ${altura} participará do processo de seleção de piloto<br>`;
+            } else {
+                mensagemCandidato.innerHTML += `Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos<br>`;
+            }
         } else {
-            mensagemCandidato.innerHTML += `Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos<br>`;
+           alert(`Insira uma altura inicial ou final válida!`);
         }
     }
 </script>

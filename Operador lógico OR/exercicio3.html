@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador lógica ||</title>
+</head>
+<body>
+    Renda individual: <input id="renda_individual"><br>
+    Renda familiar: <input id="renda_familiar"><br>
+    <button onclick="verificarBeneficio()">Terei benefício</button>
+    <div id="beneficio"></div>
+</body>
+</html>
+<script>
+    function verificarBeneficio(){
+        var individual = renda_individual.value;
+        var familiar = renda_familiar.value;
+
+        beneficio.innerHTML = ``  
+
+        if (individual <= 2000 || familiar <= 3000) {
+            beneficio.innerHTML = `Você terá direito ao auxílio`
+        } else {
+            beneficio.innerHTML = `Sem direito ao auxílio`
+        }
+    }
+</script>

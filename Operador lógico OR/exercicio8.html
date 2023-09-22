@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador lógico ||</title>
+</head>
+<body>
+    Nome da empresa: <input id="nome_empresa"><br>
+    Valor da bolsa da empresa: <input id="valor_bolsa"><br>
+    Valor do VR: <input id="valor_vr"><br>
+    Tempo de deslocamento da empresa para a SPTech: <input id="deslocamento_empresa"><br>
+    <button onclick="verificarEmpresa()">É preferida?</button>
+    <div id="empresaIdeal"></div>
+</body>
+</html>
+<script>
+    function verificarEmpresa(){
+        var nome = nome_empresa.value;
+        var bolsa = Number(valor_bolsa.value);
+        var vr = Number(valor_vr.value);
+        var deslocamento = Number(deslocamento_empresa.value);
+
+        if (bolsa >= 1800 || vr >= 20 || deslocamento <= 30) {
+            empresaIdeal.innerHTML = `A empresa ${nome} é uma de suas preferências`
+        } else {
+            empresaIdeal.innerHTML = `A empresa ${nome} está fora da sua lista`
+        }
+    }
+</script>

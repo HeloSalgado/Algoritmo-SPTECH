@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador lógica ||</title>
+</head>
+<body>
+    Nota do ENEM: <input id="nota_enem"><br>
+    Nota do vestibular interno: <input id="nota_vestibular"><br>
+    <button onclick="avaliarAluno()">Avaliação</button>
+</body>
+</html>
+<script>
+    function avaliarAluno(){
+        var enem = nota_enem.value;
+        var vestibular = nota_vestibular.value;
+
+        if (enem >= 800 || vestibular >= 700) {
+            alert(`Parabéns! Aprovado`)
+        } else {
+            alert(`Tente semestre que vem!`)
+        }
+    }
+</script>

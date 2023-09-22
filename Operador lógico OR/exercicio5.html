@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador lógico ||</title>
+</head>
+
+<body>
+    Temperatura atual: <input id="temperatura_atual"><br>
+    <button onclick="analisarClima()">Analisar clima</button>
+</body>
+
+</html>
+<script>
+    function analisarClima() {
+        var temperatura = temperatura_atual.value;
+
+        if (temperatura < 21 || temperatura > 24) {
+            alert(`Alerta de desconforto!`)
+            if (temperatura < 21) {
+                alert(`As pessoas vão ter hipotermia`)
+            } else if (temperatura > 24) {
+                alert(`As pessoas vão derreter`)
+            }
+        } 
+
+
+    }
+</script>

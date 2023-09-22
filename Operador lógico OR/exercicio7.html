@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador lógico ||</title>
+</head>
+
+<body>
+    <h3>Calculadora de cansaço aprimorada do aluno SPTech.</h3>
+    Meio de Transporte: <input id="meio_transporte"><br>
+    Distância da faculdade (KM): <input id="distancia_facu"><br>
+    <button onclick="calcularCansaço()">Calcular cansaço</button>
+</body>
+
+</html>
+<script>
+    function calcularCansaço() {
+        var transporte = meio_transporte.value;
+        var distancia = distancia_facu.value;
+
+        if (distancia <= 10) {
+            if (transporte == 'Carro' || transporte == 'Metrô' || transporte == 'Ônibus') {
+                alert(`Tá tranks ...`)
+            } else {
+                alert(`É ... um pouco cansado ...`)
+            }
+        } else if (transporte == 'Carro') {
+            alert(`É ... um pouco cansado ...`)
+        } else if (transporte == 'Metrô' || transporte == 'Ônibus') {
+            alert(`Bem cansado ...`)
+        } else {
+            alert(`Vish ... tá só o pó ...`)
+        }
+    }
+</script>

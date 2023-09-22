@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador lógico ||</title>
+</head>
+<body>
+    Modo de pagamento: <input id="modo_pagamento"><br>
+    <button onclick="analisarCompra()">Analisar Compra</button>
+    <div id="compraAnalisada"></div>
+</body>
+</html>
+<script>
+    function analisarCompra(){
+        var pagamento = modo_pagamento.value;
+
+        compraAnalisada.innerHTML = ``;
+
+        if (pagamento == 'dinheiro' || pagamento == 'débito') {
+            compraAnalisada.innerHTML = `Você terá que pagar a vista`
+        } else {
+            compraAnalisada.innerHTML = `Pagamento poderá ser parcelado`
+        }
+    }
+</script>

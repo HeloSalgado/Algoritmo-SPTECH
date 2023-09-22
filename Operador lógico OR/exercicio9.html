@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador lógico ||</title>
+</head>
+
+<body>
+    Marca da TV: <input id="marca_TV"><br>
+    Preço da TV: <input id="preco_tv"><br>
+    <button onclick="analisarCompra()">Analisar Compra</button>
+    <div id="compraAnalisada"></div>
+</body>
+
+</html>
+<script>
+    function analisarCompra() {
+        var marca = marca_TV.value;
+        var preco = Number(preco_tv.value);
+
+        if (preco < 800 || preco > 2000) {
+            compraAnalisada.innerHTML = `TV fora da faixa de preço<br>`
+            if (preco < 800) {
+                compraAnalisada.innerHTML += `Preço baixo demais!`
+            } else if (preco > 2000) {
+                compraAnalisada.innerHTML += `TV cara demais, infelizmente`
+            }
+        } else if (marca == 'Mondial' || marca == 'Britânia') {
+            compraAnalisada.innerHTML = `Na faixa de preço, porém marca não confiável`
+        } else if (marca == 'LG' || marca == 'Samsung') {
+            compraAnalisada.innerHTML = `Essa TV pode entrar na sua lista!`
+        }
+    }
+</script>
