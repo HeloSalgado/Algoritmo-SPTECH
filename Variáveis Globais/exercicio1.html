@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variável global 1</title>
+</head>
+
+<body>
+    <img id="Imagem_pinguim" style="width: 400px;"
+        src="https://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png" alt=""><br>
+    <button onclick="diminuir()">Aumentar a largura</button>
+    <button onclick="aumentar()">Diminuir a largura</button>
+</body>
+
+</html>
+<script>
+ var largura = 400;
+
+    function diminuir() {
+        largura -= 10;
+
+        Imagem_pinguim.style.width = largura + "px";
+    }
+
+    function aumentar() {
+        largura += 10;
+
+        Imagem_pinguim.style.width = largura + "px";
+    }
+</script>

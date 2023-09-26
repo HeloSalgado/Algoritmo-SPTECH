@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variável global 2</title>
+</head>
+
+<body>
+    Valor a retirar: <input id="input_valor"><br><br>
+    Total guardado no cofrinho: R$<u id="total_guardado">0</u> <br>
+    Depósitos efetuados: <u id="depositos_feitos">0</u> <br>
+    Retiradas efetuadas: <u id="u_retiradas">0</u> <br><br>
+    <button onclick="depositar050()">Depositar 0,50</button>
+    <button onclick="depositar2()">Depositar 2,00</button> 
+    <button onclick="retirar050()">Retirar 0,50</button>
+    <button onclick="retirar()">Retirar</button>
+
+</body>
+
+</html>
+<script>
+    var valor = 0
+    var depositos = 0
+    var retiradas = 0
+
+    function depositar050() {
+        valor += 0.50
+        depositos += 1
+
+        total_guardado.innerHTML = valor
+        depositos_feitos.innerHTML = depositos
+    }
+
+    function depositar2(){
+        valor += 2
+        depositos += 1
+
+        total_guardado.innerHTML = valor
+        depositos_feitos.innerHTML = depositos
+    }
+
+    function retirar050(){
+        valor -= 0.50
+        retiradas += 1
+
+        total_guardado.innerHTML = valor
+        u_retiradas.innerHTML = retiradas
+    }
+
+    function retirar(){
+        var valor_retirar = Number(input_valor.value)
+        valor -= valor_retirar
+        retiradas += 1
+
+        total_guardado.innerHTML = valor
+        u_retiradas.innerHTML = retiradas
+    }
+</script>

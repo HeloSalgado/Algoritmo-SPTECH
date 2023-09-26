@@ -24,12 +24,12 @@
             compraAnalisada.innerHTML = `TV fora da faixa de preço<br>`
             if (preco < 800) {
                 compraAnalisada.innerHTML += `Preço baixo demais!`
-            } else if (preco > 2000) {
+            } else {
                 compraAnalisada.innerHTML += `TV cara demais, infelizmente`
             }
         } else if (marca == 'Mondial' || marca == 'Britânia') {
             compraAnalisada.innerHTML = `Na faixa de preço, porém marca não confiável`
-        } else if (marca == 'LG' || marca == 'Samsung') {
+        } else {
             compraAnalisada.innerHTML = `Essa TV pode entrar na sua lista!`
         }
     }

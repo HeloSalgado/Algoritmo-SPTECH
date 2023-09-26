@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variável global 2</title>
+</head>
+
+<body>
+    Seu salário: <input id="salario_usuario"><br>
+    <button onclick="verificarSalario()">Confirmar Salário</button>
+    <button onclick="contaDe100()">Pagar conta de 100</button>
+    <button onclick="contaDe500()">Pagar conta de 500</button>
+    <button onclick="ganhar2000()">Ganhar 2000 na loteria</button>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    var granaAtual = 0
+
+    function verificarSalario() {
+        granaAtual = Number(salario_usuario.value);
+
+        mensagem.innerHTML = `Grana atual: R$${granaAtual}`
+    }
+
+    function contaDe100() {
+
+        granaAtual -= 100
+
+        mensagem.innerHTML = `Grana atual: R$${granaAtual}`
+    }
+
+    function contaDe500(){
+        granaAtual -= 500
+
+        mensagem.innerHTML = `Grana atual: R$${granaAtual}`
+    }
+
+    function ganhar2000(){
+        granaAtual += 2000
+
+        mensagem.innerHTML = `Grana atual: R$${granaAtual}`
+    }
+
+
+</script>
