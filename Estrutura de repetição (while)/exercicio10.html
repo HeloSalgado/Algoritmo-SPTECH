@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 10</title>
+</head>
+<body>
+   Número inicial: <input id="num_inicial" type="number"> <br>
+   Número final: <input id="num_final" type="number"><br>
+   <button onclick="pares()">S2 pares</button>
+   <div id="numPares"></div>
+</body>
+</html>
+<script>
+    function pares() {
+        var inicial = Number(num_inicial.value);
+        var final = Number(num_final.value);
+        var numero = inicial;
+
+        numPares.innerHTML = ``;
+
+        while (numero <= final) {
+            if (numero % 2 == 0) {
+                numPares.innerHTML += numero + '<br>'
+            }
+            numero += 1
+        }
+    }
+</script>

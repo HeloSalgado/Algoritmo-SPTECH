@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 24</title>
+</head>
+<body>
+    Digite um número: <input id="input_numero"><br>
+    <button onclick="verDivisores()">Ver divisores</button>
+    <div id="divisores"></div>
+</body>
+</html>
+<script>
+    function verDivisores() {
+        var numeroUsuario = Number(input_numero.value);
+        var repeticao = 1;
+        
+        divisores.innerHTML += `Divisores de ${numeroUsuario}:<br>`
+
+        while (repeticao <= numeroUsuario) {
+
+            if (numeroUsuario % repeticao == 0) {
+                divisores.innerHTML += `${repeticao} <br>`
+            }
+
+            repeticao += 1;
+        }
+    }
+</script>

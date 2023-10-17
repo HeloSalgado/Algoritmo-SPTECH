@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 6</title>
+</head>
+<body>
+    Nome da pessoa que mais ama: <input id="input_nome"><br>
+    Quanto você a ama: <input id="input_qtdama" type="number"><br>
+    <button onclick="expressar()">Expressar amor</button>
+    <div id="amor"></div>
+</body>
+</html>
+<script>
+    function expressar(){
+        var nome = input_nome.value;
+        var qtdAmor = Number(input_qtdama.value);
+        var repeticao = 0;
+
+        while (repeticao < qtdAmor) {
+            repeticao += 1;
+            amor.innerHTML += `${repeticao}. ${nome}, eu te amo! Sempre lembre disso! <br>`
+        }
+    }
+</script>

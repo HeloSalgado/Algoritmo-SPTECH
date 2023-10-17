@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 13</title>
+</head>
+
+<body>
+    De quantos em quantos dias você faz musculação: <input id="qtd_musculacao" type="number"><br>
+    <button onclick="exibirRotina()">Exibir rotina mensal</button>
+    <div id="rotina"></div>
+</body>
+
+</html>
+<script>
+    function exibirRotina() {
+        var intervalo = Number(qtd_musculacao.value);
+        var repeticao = 1;
+
+        rotina.innerHTML = ``;
+
+        while (repeticao <= 30) {
+
+            if (repeticao == 1) {
+                rotina.innerHTML += `Dia ${repeticao} - Musculação<br>`;
+            } else if ((repeticao - 1) % intervalo == 0) {
+                rotina.innerHTML += `Dia ${repeticao} - Musculação<br>`;
+            } else {
+                rotina.innerHTML += `Dia ${repeticao} - Comer, dormir etc<br>`;
+            }
+            repeticao += 1;
+        }
+    }
+</script>

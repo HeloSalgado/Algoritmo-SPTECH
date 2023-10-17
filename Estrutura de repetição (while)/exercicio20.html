@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 20</title>
+</head>
+
+<body>
+    Quantos depósitos você fez no banco: <input id="depositos_banco" type="number"><br>
+    Valor de cada depósito: <input id="valor_depositos" type="number"><br>
+    <button onclick="verificarGrana()">Acompanhar grana</button>
+    <div id="granaBanco"></div>
+    <div id="total"></div>
+</body>
+
+</html>
+<script>
+    function verificarGrana() {
+        var qtdDepositos = Number(depositos_banco.value);
+        var valor = Number(valor_depositos.value);
+        var repeticao = 1;
+
+        granaBanco.innerHTML = ``;
+
+        while (repeticao <= qtdDepositos) {
+            granaBanco.innerHTML += `${repeticao}º mês: R$${valor * repeticao}<br>`;
+            total.innerHTML = `Total guardado: R$${valor * repeticao}`
+            repeticao += 1;
+        }
+    }
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 4</title>
+</head>
+<body>
+    <button onclick="pares()">S2 pares</button>
+    <div id="numerosPares"></div>
+</body>
+</html>
+<script>
+    function pares() {
+        var repeticao = 0;
+        numerosPares.innerHTML = ``;
+
+        while (repeticao <= 100) {
+            numerosPares.innerHTML += `${repeticao} <br>` 
+            repeticao += 2
+        }
+    }
+</script>

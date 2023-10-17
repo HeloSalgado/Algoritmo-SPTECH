@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 14</title>
+</head>
+
+<body>
+    Digite sua idade: <input id="idade_usuario" onkeyup="periodoEscolar()"><br>
+    <div id="fasesDaVida"></div>
+</body>
+
+</html>
+<script>
+    function periodoEscolar() {
+        var idade = Number(idade_usuario.value);
+        var repeticao = 0;
+
+        fasesDaVida.innerHTML = ``;
+
+        while (repeticao <= idade) {
+
+            if (repeticao >= 0 && repeticao <= 4) {
+                fasesDaVida.innerHTML += `${repeticao} anos (Primeira Infância)<br>`;
+            } else if (repeticao <= 6) {
+                fasesDaVida.innerHTML += `${repeticao} anos (Pré-escolar)<br>`;
+            } else if (repeticao <= 10) {
+                fasesDaVida.innerHTML += `${repeticao} anos (Segunda Infância)<br>`;
+            } else if (repeticao <= 18) {
+                fasesDaVida.innerHTML += `${repeticao} anos (Adolescência)<br>`;
+            } else if (repeticao <= 50) {
+                fasesDaVida.innerHTML += `${repeticao} anos (Adulto)<br>`;
+            } else if (repeticao <= 100) {
+                fasesDaVida.innerHTML += `${repeticao} anos (Melhor idade)<br>`;
+            } else {
+                fasesDaVida.innerHTML += `${repeticao} anos (Matusalém)<br>`;
+            }
+            repeticao += 1;
+        }
+
+    }
+</script>

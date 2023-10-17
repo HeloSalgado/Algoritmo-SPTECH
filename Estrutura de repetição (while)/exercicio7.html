@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 7</title>
+</head>
+<body>
+    Número: <input id="input_numero" type="number" min="20" max="100"><br>
+    <button onclick="multiplo5()">Adoro múltiplos de 5</button>
+    <div id="numerosMultiplos"></div>
+</body>
+</html>
+<script>
+    function multiplo5() {
+        var numero = Number(input_numero.value);
+        var repeticao = 0;
+
+        numerosMultiplos.innerHTML = ``;
+
+        while (repeticao <= numero) {
+            numerosMultiplos.innerHTML += repeticao + `<br>`
+            repeticao += 5
+        }
+    }
+</script>

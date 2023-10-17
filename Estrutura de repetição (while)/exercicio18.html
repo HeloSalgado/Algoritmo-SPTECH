@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 18</title>
+</head>
+<body>
+    Quantas "coca-cola" você acha que já bebeu na vida: <input id="qtd_coca" type="number"><br>
+    <button onclick="verQuantidade()">Ver quantidade</button><br>
+    <div id="quantidadeCoca"></div>
+</body>
+</html>
+<script>
+    function verQuantidade() {
+        var qtdCoca = Number(qtd_coca.value);
+        var repeticao = 1;
+
+        quantidadeCoca.innerHTML = ``;
+
+        while (repeticao <= qtdCoca) {
+            quantidadeCoca.innerHTML += `<img width="100px" src="https://giassi.vtexassets.com/arquivos/ids/644033/Refrigerante-Coca-Cola-Garrafa-200ml.png?v=638211559211900000" alt="">`
+            repeticao += 1;
+        }
+    }
+</script>

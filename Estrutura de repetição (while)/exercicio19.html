@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 19</title>
+</head>
+
+<body>
+    Quantas xícaras de café com leite você já tomou na vida: <input id="xicaras_cafe" type="number"><br>
+    <button onclick="verQuantidade()">Ver quantidade</button>
+    <div id="quantidadeCafe"></div>
+</body>
+
+</html>
+<script>
+    function verQuantidade() {
+        var xicaras = Number(xicaras_cafe.value);
+        var repeticao = 1;
+        var leite = xicaras;
+        var cafe = xicaras * 2;
+
+        quantidadeCafe.innerHTML = ``;
+
+        while (repeticao <= (xicaras * 2)) {
+
+            if (repeticao <= leite) {
+                quantidadeCafe.innerHTML += `<img width="100px" src="https://minhasaude.proteste.org.br/wp-content/uploads/2023/06/colher-carregando-punhado-de-leite-em-po-sobre-fundo-branco.jpg" alt="">`
+            }
+            if (repeticao <= cafe) {
+                quantidadeCafe.innerHTML += `<img width="100px" src="https://w7.pngwing.com/pngs/563/535/png-transparent-coffee-in-spoon-coffee-sago-palm-landscape-arecaceae-coffee-powder-coffee-shop-pest-control-coffee.png" alt="">`
+            }
+            
+            repeticao += 1;
+        }
+    }
+</script>

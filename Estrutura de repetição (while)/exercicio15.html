@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 15</title>
+</head>
+
+<body>
+    Quantidade de elefantes: <input id="qtd_elefantes" type="number"><br>
+    <button onclick="atazanar()">Atazanar a médium</button><br>
+    <div id="elefantes"></div>
+</body>
+
+</html>
+<script>
+    function atazanar() {
+        var qtdElefantes = Number(qtd_elefantes.value);
+        var repeticao = 2;
+        var incomodam = 'incomodam '
+
+        elefantes.innerHTML = ``;
+
+        while (repeticao <= qtdElefantes) {
+            incomodam += "incomodam ";
+            
+            elefantes.innerHTML += `1 elefante incomoda muita gente!<br>`;
+            elefantes.innerHTML += `${repeticao} elefantes ${incomodam} muito mais<br>`;
+
+            repeticao += 1;
+        }
+
+
+    }
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 2</title>
+</head>
+<body>
+    <button onclick="digaAlgo()">Diga algo sobre a matéria de algoritmos</button>
+    <div id="algoMateria"></div>
+</body>
+</html>
+<script>
+    function digaAlgo() {
+        var repeticao = 1;
+        algoMateria.innerHTML = ``
+
+        while (repeticao <= 7){
+            repeticao += 1;
+            algoMateria.innerHTML += `Algoritmos é legal <br>`
+        }
+    }
+</script>

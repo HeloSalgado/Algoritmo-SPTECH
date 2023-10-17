@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 23</title>
+</head>
+
+<body>
+    Limite inicial: <input id="limite_inicial" type="number"><br>
+    Limite final: <input id="limite_final" type="number"><br>
+    Número pra divisibilidade: <input id="input_divisibilidade" type="number"><br>
+    <button class="botao" onclick="contar()">Contar</button>
+    <div id="resultado"></div>
+</body>
+
+</html>
+<script>
+    function contar() {
+        var limiteInicial = Number(limite_inicial.value);
+        var limiteFinal = Number(limite_final.value);
+        var numeroDividir = Number(input_divisibilidade.value);
+        var repeticao = limiteInicial;
+        var TotalExibidos = 0;
+        var soma = 0;
+        var maiorNum = 0;
+        var fraseRepeticao = '';
+
+        resultado.innerHTML = ``;
+
+        if (limiteFinal > 100 || limiteFinal < limiteInicial) {
+            resultado.innerHTML = `Insira um número válido`
+        } else if (limiteInicial < 1) {
+            resultado.innerHTML = `Insira um número maior ou igual a 1`
+        } else if (numeroDividir < 3 || numeroDividir > 10) {
+            if (numeroDividir < 3) {
+                resultado.innerHTML = `Insira um número maior ou igual a 3`;
+            } else {
+                resultado.innerHTML = `Insira um número menor ou igual a 10`;
+            }
+        }
+
+        while (repeticao <= limiteFinal) {
+            if (repeticao % numeroDividir == 0) {
+                resultado.innerHTML += `${repeticao}, `;
+                TotalExibidos += 1;
+                soma = soma + repeticao;
+                maiorNum = repeticao;
+                fraseRepeticao += repeticao + '';    
+            };
+            repeticao += 1;
+            
+        }
+        
+        resultado.innerHTML += `<br>QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: ${TotalExibidos} <br>
+            SOMATÓRIO DOS NÚMEROS EXIBIDOS: ${soma}<br>
+            MÉDIA DOS NÚMEROS EXIBIDOS: ${soma / TotalExibidos}<br>
+            MAIOR NÚMERO EXIBIDO: ${maiorNum}<br>
+            MENOR NÚMERO EXIBIDO: ${fraseRepeticao[0]}<br>`;
+    }
+</script>

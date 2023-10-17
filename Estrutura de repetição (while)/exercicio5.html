@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 5</title>
+</head>
+
+<body>
+    <button onclick="numeroCaba()">Números cabalísticos</button>
+    <div id="numeros"></div>
+</body>
+
+</html>
+<script>
+    function numeroCaba() {
+        var repeticao = 0;
+
+        while (repeticao < 30) {
+            repeticao += 1
+
+            if (repeticao != 3 && repeticao != 4 && repeticao != 7 && repeticao != 10 && repeticao != 12) {
+                numeros.innerHTML += repeticao + `<br>`;
+            }
+        }
+    }
+</script>
