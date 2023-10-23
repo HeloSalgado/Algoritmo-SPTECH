@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>While 26</title>
 </head>
+
 <body>
     Digite um número: <input id="numero_usuario" type="number"><br>
     <button onclick="somarPares()">Somar Pares</button><br>
     <div id="resultadoPares"></div>
 </body>
+
 </html>
 <script>
     function somarPares() {
@@ -21,15 +24,15 @@
 
         if (numeroUsuario < 10 || numeroUsuario > 500) {
             alert(`Número inválido!`);
-        }
+        } else {
+            while (repeticao <= numeroUsuario) {
+                if (repeticao % 2 == 0) {
+                    resultadoPares.innerHTML += `${repeticao} <br>`;
+                    soma += repeticao;
+                }
 
-        while (repeticao <= numeroUsuario){
-            if (repeticao % 2 == 0) {
-                resultadoPares.innerHTML += `${repeticao} <br>`;
-                soma += repeticao;
+                repeticao += 1;
             }
-            
-            repeticao += 1;
         }
         resultadoPares.innerHTML += `Soma dos pares: ${soma}`;
     }
