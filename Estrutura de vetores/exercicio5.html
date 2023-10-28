@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores 5</title>
+</head>
+
+<body>
+    Informe os filmes que mais gosta: <input id="input_filmes"><br>
+    <button onclick="cadastrarFilme()">Cadastrar filme</button>
+    <div id="filmesCadastrados"></div>
+</body>
+
+</html>
+<script>
+    var listaFilmes = [];
+
+    function cadastrarFilme() {
+        var filme = input_filmes.value;
+        var frase = '';
+
+        listaFilmes.push(filme);
+
+        frase += `Seu filme favorito: ${listaFilmes[0]}<br>`;
+
+        if (listaFilmes.length < 3) {
+            frase += `
+            Seu 3º filme favorito: Ainda não existe<br> `;
+        } else {
+            frase += `
+            Seu 3º filme favorito: ${listaFilmes[2]}<br>`;
+        }
+
+        frase += `Total de filmes cadastrados: ${listaFilmes.length}`;
+
+        filmesCadastrados.innerHTML = frase;
+    }
+</script>

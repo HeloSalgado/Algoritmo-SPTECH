@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores 4</title>
+</head>
+<body>
+    Informe os filmes que mais gosta: <input id="input_filmes"><br>
+    <button onclick="cadastrarFilme()">Cadastrar filme</button><br>
+    <button onclick="verFavs()">Ver favoritos</button><br>
+    <div id="filmesFav"></div>
+</body>
+</html>
+<script>
+    var listaFilmes = [];
+
+    function cadastrarFilme(){
+        var filme = input_filmes.value;
+
+        listaFilmes.push(filme);
+    }
+
+    function verFavs(){
+        filmesFav.innerHTML = `${listaFilmes}<br>`;
+
+        filmesFav.innerHTML += `Total: ${listaFilmes.length}<br>`;
+
+        filmesFav.innerHTML += `O filme que mais gosta é ${listaFilmes[0]}<br>
+        E desses, o que menos gosta é ${listaFilmes[listaFilmes.length - 1]}
+        `;
+    }
+</script>

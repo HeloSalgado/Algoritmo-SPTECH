@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite uma fruta: <input id="fruta_escolhida" type="text"><br>
+    <button onclick="adicionarFruta()">Adicinar fruta</button>
+    <button onclick="listaCompleta()">Ver lista completa</button>
+    <div id="listamercado"></div>
+</body>
+</html>
+<Script>
+    var listaFrutas = [];
+
+    function adicionarFruta() {
+        var fruta = fruta_escolhida.value;
+        listaFrutas.push(fruta)
+    }
+
+    function listaCompleta() {
+        listamercado.innerHTML = "";
+
+        for (var posicao = 0; posicao < listaFrutas.length; posicao += 1) {
+            listamercado.innerHTML += `${listaFrutas[posicao]}<br>`
+        }
+    }
+// //Estrutura de vetores
+
+// var listaSupermercado = ["Maçã", "Tomate", "Sabão em pó"];
+// // separado por vírgulas
+
+// listaSupermercado[0]
+
+// var itemDaLista = 0;
+// listaSupermercado[itemDaLista]    
+
+// for (var posicao = 0; posicao <= listaSupermercado.length; posicao += 1){
+//     console.log(listaSupermercado[posicao])
+// }
+
+// for (var posicao = 0; posicao <= listaSupermercado.length; posicao += 1){
+//     var itemDaLista = listaSupermercado[posicao];
+//     console.log(`${posicao} - ${itemDaLista}`)
+// }
+
+// for (var posicao = 0; posicao <= listaSupermercado.length; posicao += 1){
+//     var itemDaLista = listaSupermercado[posicao];
+//     if (posicao % 2 == 0) {
+//         console.log(`${posicao} - ${itemDaLista} - Já comprado!`)
+//     } else  {
+//         console.log(`${posicao} - ${itemDaLista}`)
+//     }
+// }
+
+// listaSupermercado.push("Arroz")
+// adiciona itens na lista
+
+// listaSupermercado.slipe(2, 1, 88)
+// troca o item do indice(posição, contagem, item de troca)
+
+// listaSupermercado.onshift()
+// coloca no começo da lista
+</Script>
+
+
+

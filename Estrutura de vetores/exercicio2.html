@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores 2</title>
+</head>
+
+<body>
+    Destino da viagem: <input id="destino_viagem"> <br>
+    <button onclick="adicionarDestino()">Adicionar</button><br>
+    <button onclick="primeiraViagem()">Primeira viagem</button><br>
+    <button onclick="terceiraViagem()">Terceira viagem</button><br>
+    <button onclick="ultimaViagem()">Última viagem</button><br>
+    <div id="listaDestino"></div>
+</body>
+
+</html>
+<script>
+    var listadestino = []
+
+    function adicionarDestino() {
+        var destino = destino_viagem.value;
+        listadestino.push(destino)
+    }
+
+    function primeiraViagem() {
+        listaDestino.innerHTML = '';
+
+        for (var posicao = 0; posicao < listadestino.length; posicao += 1){
+            if (listadestino[posicao] == '') {
+                listaDestino.innerHTML = `Ainda não viajou`;
+                break;
+            } else {
+                listaDestino.innerHTML = listadestino[0];
+            }
+        }
+    }
+
+    function terceiraViagem() {
+        listaDestino.innerHTML = '';
+
+        for (var posicao = 0; posicao < listadestino.length; posicao += 1){
+            if (listadestino.length <= 2) {
+                listaDestino.innerHTML = `Ainda não fez terceira viagem`;
+                break;
+            } else {
+                listaDestino.innerHTML = listadestino[2];
+            }
+        }
+    }
+
+    function ultimaViagem(){
+        listaDestino.innerHTML = '';
+
+        for (var posicao = 0; posicao < listadestino.length; posicao += 1){
+            if (listadestino[posicao] == '') {
+                listaDestino.innerHTML = `Ainda não viajou`;
+                break;
+            } else {
+                listaDestino.innerHTML = listadestino[listadestino.length - 1]
+            }
+        }
+    }
+
+</script>

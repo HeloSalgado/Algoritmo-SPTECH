@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores 3</title>
+</head>
+
+<body>
+    Digite bairros em que você morou: <input id="input_bairros"><br>
+    <button onclick="cadastrarBairro()">Cadastrar bairro</button><br>
+    Número do local: <input id="num_lista" type="number" min="1"><br>
+    <button onclick="relembrarMoradia()">Relembrar moradia</button>
+    <div id="bairrosUsuario"></div>
+</body>
+
+</html>
+<script>
+    var listaBairros = [];
+
+    function cadastrarBairro() {
+        var bairro = input_bairros.value;
+        listaBairros.push(bairro);
+    }
+
+    function relembrarMoradia() {
+        bairrosUsuario.innerHTML = '';
+        var numeroLista = Number(num_lista.value);
+
+        for (var posicao = 1; posicao < (listaBairros.length + 1); posicao += 1) {
+            if (numeroLista == posicao) {
+                bairrosUsuario.innerHTML = listaBairros[posicao - 1];
+            }
+            if (numeroLista > listaBairros.length) {
+                bairrosUsuario.innerHTML += `Você ainda não morou num ${numeroLista}º bairro!`
+                break;
+            }
+        }
+    }
+</script>

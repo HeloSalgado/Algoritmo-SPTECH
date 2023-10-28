@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores 1</title>
+</head>
+
+<body>
+    Digite uma fruta: <input id="input_fruta" type="text"><br>
+    <button onclick="pesquisarFruta()">Pesquisar</button><br>
+    <div id="frutaPesquisada"></div>
+</body>
+
+</html>
+<script>
+    var listaFruta = ["Maçã", "Morango", "Abacaxi", "Pera", "Manga"];
+
+    function pesquisarFruta() {
+        frutaPesquisada.innerHTML = ``;
+
+        for (var posicao = 0; posicao < listaFruta.length; posicao += 1) {
+            var fruta = input_fruta.value;
+
+            if (listaFruta[posicao] == fruta) {
+                frutaPesquisada.innerHTML = `A fruta ${fruta} existe na lista.`;
+                break;
+            } else {
+                frutaPesquisada.innerHTML = `Não existe a fruta ${fruta} na lista.`
+            }
+        }
+    }
+
+</script>
