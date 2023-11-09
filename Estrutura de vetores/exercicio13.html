@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores 13</title>
+</head>
+
+<body>
+    Indique o resultado:
+    <select id="select_campanha">
+        <option value="vitoria">Vitória</option>
+        <option value="empate">Empate</option>
+        <option value="derrota">Derrota</option>
+    </select><br>
+    <button onclick="registrarJogo()">Registrar jogo</button><br>
+    Indique qual jogo deseja saber o resultado:
+    <input onkeyup="buscarJogoDesejado()" id="jogo_desejado">
+    <div id="resultadoJogo"></div>
+</body>
+
+</html>
+<script>
+    var listaCampanha = [];
+    var qtdVitoria = 0;
+    var qtdEmpate = 0;
+    var qtdDerrota = 0;
+
+    function registrarJogo() {
+        var campanha = select_campanha.value;
+
+        listaCampanha.push(campanha);
+
+            if (campanha == 'vitoria') {
+                qtdVitoria += 1
+            } else if (campanha == 'empate') {
+                qtdEmpate += 1
+            } else if (campanha == 'derrota') {
+                qtdDerrota += 1
+            }
+
+        var pontosTotal = (qtdVitoria * 3) + qtdEmpate;
+
+        resultadoJogo.innerHTML = ` O time teve: ${qtdVitoria} vitórias, ${qtdEmpate} empates, ${qtdDerrota} derrotas<br> 
+        Pontuação total: ${pontosTotal} pontos <br>
+        Aproveitamento: ${(pontosTotal / (listaCampanha.length * 3)) * 100}%.<br>`;
+    }
+
+    function buscarJogoDesejado() {
+        var jogoDesejado = Number(jogo_desejado.value);
+
+        if (jogoDesejado >= 1 && jogoDesejado <= listaCampanha.length) {
+            resultadoJogo.innerHTML += `No ${jogoDesejado}º jogo, o time `;
+            if (listaCampanha[jogoDesejado - 1] == 'vitoria') {
+                resultadoJogo.innerHTML += 'ganhou <br>';
+            } else if (listaCampanha[jogoDesejado - 1] == 'empate'){
+                resultadoJogo.innerHTML += 'empatou <br>';
+            } else {
+                resultadoJogo.innerHTML += 'perdeu<br>';
+            }
+        } else {
+            resultadoJogo.innerHTML += `Não foi cadastrado um ${jogoDesejado}º jogo <br>`
+        }
+
+    }
+</script>

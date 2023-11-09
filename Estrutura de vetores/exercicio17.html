@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores  17</title>
+</head>
+<body>
+    <div id="registrarAnalisar">
+    <h2>Análise de performance de Alunos - Registro</h2>
+        Entre com o Nome do Aluno: <input id="nome_aluno"><br>
+        Entre com a Nota do Aluno: <input id="nota_aluno"><br>
+        <button onclick="registrarAluno()">Registrar</button>
+        <button onclick="analisarAluno()">Analisar</button><br>
+        <div id="performanceAlunos"></div>
+    </div>
+</body>
+</html>
+<script>
+    var listaAluno = [];
+    var listaNota = [];
+
+    function registrarAluno(){
+        var nomeAluno = nome_aluno.value;
+        var notaAluno = Number(nota_aluno.value)
+
+        performanceAlunos.innerHTML = '';
+
+        if (nomeAluno == "" || notaAluno < 0 || notaAluno > 10) {
+            alert('Campo do nome vazio ou nota do aluno não está entre 0 e 10');
+        } else {
+            listaAluno.push(nomeAluno);
+            listaNota.push(notaAluno);
+
+            for (var posicaoAluno = listaAluno.length - 1, posicaoNota = listaNota.length - 1; posicaoAluno >= 0 && posicaoNota >= 0; posicaoAluno--){
+                performanceAlunos.innerHTML += `${listaAluno[posicaoAluno]}<br>
+                ${listaNota[posicaoNota]}<br>`;
+
+                posicaoNota--
+            }
+        }
+    }
+
+    function analisarAluno(){
+        registrarAnalisar.innerHTML = '';
+        
+        registrarAnalisar.innerHTML += `
+        <h2>Análise de performance de Alunos - Pesquisa</h2>
+        Entre com o intervalo de notas:  <input id="inicio_intervalo" placeholder="De"> <input id="fim_intervalo" placeholder="Até"> <br><br>
+        <button onclick="pesquisarNota()">Pesquisar</button><br>
+        <div id="intervalos"></div>`
+    }
+
+
+    function pesquisarNota(){
+        var listaIntervaloNota = [];
+        var listaIntervaloAluno = [];
+
+        var inicioIntervalo = Number(inicio_intervalo.value);
+        var fimIntervalo = Number(fim_intervalo.value)
+
+        intervalos.innerHTML = '';
+
+        if (inicioIntervalo < 0 || inicioIntervalo > 10 || fimIntervalo < 0 || fimIntervalo > 10 ||inicioIntervalo > fimIntervalo){
+            alert('Algum campo fora do intervalo de 0 a 10 ou número inicial maior que o final')
+        } else {
+            var maiorNota = listaNota[0];
+            var menorNota = listaNota[0];
+            var somaMedia = 0
+
+            for (var posicao = 0; posicao < listaAluno.length && posicao < listaNota.length; posicao++){
+                if (listaNota[posicao] >= inicioIntervalo && listaNota[posicao] <= fimIntervalo){
+                    listaIntervaloNota.push(listaNota[posicao])
+                    listaIntervaloAluno.push(listaAluno[posicao])
+
+                    intervalos.innerHTML += `O aluno ${listaAluno[posicao]} ficou com a nota ${listaNota[posicao]}<br>`
+                }
+
+                if (maiorNota < listaNota[posicao]) {
+                    maiorNota = listaNota[posicao]
+                }
+
+                if (menorNota > listaNota[posicao]) {
+                    menorNota = listaNota[posicao]
+                }
+
+                somaMedia += listaNota[posicao]
+
+            }
+
+            var media = somaMedia / listaNota.length;
+
+            intervalos.innerHTML += `<br>Total de alunos registrados: ${listaAluno.length}
+            <br>
+            Total de alunos listado: ${listaIntervaloAluno.length} (com nota no intervalo informado) 
+            <br>
+            Maior Nota: ${maiorNota} 
+            <br>
+            Menor Nota: ${menorNota} 
+            <br>
+            Média da Nota: ${media}`
+        }
+    }
+</script>

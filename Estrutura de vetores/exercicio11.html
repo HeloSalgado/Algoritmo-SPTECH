@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores 11</title>
+</head>
+<body>
+    Informe o preço do produto:
+    <input id="preco_produto">
+    <button onclick="cadastrarPreco()">Cadastrar</button><br>
+    <button onclick="verEstoque()">Atualizar estoque</button><br>
+    <div id="estoqueLoja"></div>
+</body>
+</html>
+<script>
+    var listaPreco = []
+
+    function cadastrarPreco(){
+        var precoProduto = Number(preco_produto.value)
+        listaPreco.push(precoProduto)
+    }
+
+    function verEstoque(){
+        var contarPreco = 0
+
+        for (var repeticao = 0; repeticao < listaPreco.length; repeticao += 1){
+            contarPreco += listaPreco[repeticao]
+        }
+
+        estoqueLoja.innerHTML = `Você tem ${listaPreco.length} produtos cadastrados em estoque <br>
+        Seu estoque vale R$${contarPreco}`
+    }
+</script>

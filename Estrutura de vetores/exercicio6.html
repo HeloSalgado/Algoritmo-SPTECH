@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores 6</title>
+</head>
+<body>
+    Informe os filmes que mais gosta: <input id="input_filme"><br>
+    <button onclick="cadastrarFilme()">Cadastrar</button>
+    <div id="filmesFav"></div>
+</body>
+</html>
+<script>
+    var listaFilmes = [];
+    var posicao = 0
+
+    function cadastrarFilme() {
+        listaFilmes.push(input_filme.value)
+
+        for(; posicao < listaFilmes.length; posicao += 1){
+
+            filmesFav.innerHTML += `${listaFilmes[posicao]}<br>`;
+        }
+
+    }
+</script>

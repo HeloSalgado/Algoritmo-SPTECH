@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores  18</title>
+</head>
+<body>
+    <div id="registrarAnalisar">
+    <h2>Análise de performance de Alunos - Registro</h2>
+        Entre com o Nome do Aluno: <input id="nome_aluno"><br>
+        Entre com a primeira Nota da avaliação continuada: <input id="nota1_aluno"><br>
+        Entre com a segunda Nota da avaliação continuada: <input id="nota2_aluno"><br>
+        Entre com a terceira Nota da avaliação continuada: <input id="nota3_aluno"><br>
+        <button onclick="registrarAluno()">Registrar</button>
+        <button onclick="analisarAluno()">Analisar</button><br>
+        <div id="performanceAlunos"></div>
+    </div>
+</body>
+</html>
+<script>
+    var listaAluno = [];
+    var listaNota1 = [];
+    var listaNota2 = [];
+    var listaNota3 = [];
+
+    function registrarAluno(){
+        var nomeAluno = nome_aluno.value;
+        var notaAluno1 = Number(nota1_aluno.value)
+        var notaAluno2 = Number(nota2_aluno.value)
+        var notaAluno3 = Number(nota3_aluno.value)
+
+        performanceAlunos.innerHTML = '';
+
+        if (nomeAluno == "" || notaAluno1 < 0 || notaAluno1 > 10 || notaAluno2 < 0 || notaAluno2 > 10 || notaAluno3 < 0 || notaAluno3 > 10) {
+            alert('Campo do nome vazio ou nota do aluno não está entre 0 e 10');
+        } else {
+            listaAluno.push(nomeAluno);
+            listaNota1.push(notaAluno1);
+            listaNota2.push(notaAluno2);
+            listaNota3.push(notaAluno3);
+
+            for (var posicaoAluno = listaAluno.length - 1; posicaoAluno >= 0; posicaoAluno--){
+                performanceAlunos.innerHTML += `${listaAluno[posicaoAluno]}<br>
+                ${listaNota1[posicaoAluno]}<br>
+                ${listaNota2[posicaoAluno]}<br>
+                ${listaNota3[posicaoAluno]}<br>`;
+            }
+        }
+    }
+
+    function analisarAluno(){
+        registrarAnalisar.innerHTML = '';
+        
+        registrarAnalisar.innerHTML += `
+        <h2>Análise de performance de Alunos - Pesquisa</h2>
+        Entre com o intervalo de notas:  <input id="inicio_intervalo" placeholder="De"> <input id="fim_intervalo" placeholder="Até"> <br>
+        <button onclick="pesquisarNota()">Pesquisar</button><br><br>
+        Entre com a nota desejada: <input id="nota_desejada" placeholder="AC1"><br>
+        <button onclick="pesquisarNotaDesejada()"> Pesquisar por nota </button><br><br>
+        <div id="intervalos"></div>`
+    }
+
+
+    function pesquisarNota(){
+        var listaIntervaloAluno = [];
+        var listaIntervaloNota1 = [];
+        var listaIntervaloNota2 = [];
+        var listaIntervaloNota3 = [];
+
+
+        var inicioIntervalo = Number(inicio_intervalo.value);
+        var fimIntervalo = Number(fim_intervalo.value);
+
+        intervalos.innerHTML = '';
+
+        if (inicioIntervalo < 0 || inicioIntervalo > 10 || fimIntervalo < 0 || fimIntervalo > 10 ||inicioIntervalo > fimIntervalo){
+            alert('Algum campo fora do intervalo de 0 a 10 ou número inicial maior que o final')
+        } else {
+            var maiorNotaAC1 = listaNota1[0];
+            var maiorNotaAC2 = listaNota2[0];
+            var maiorNotaAC3 = listaNota3[0];
+            var menorNotaAC1 = listaNota1[0];
+            var menorNotaAC2 = listaNota2[0];
+            var menorNotaAC3 = listaNota3[0];
+
+            var somaMedia = 0
+
+            for (var posicao = 0; posicao < listaAluno.length; posicao++){
+                if (listaNota1[posicao] >= inicioIntervalo && listaNota1[posicao] <= fimIntervalo &&
+                listaNota2[posicao] >= inicioIntervalo && listaNota2[posicao] <= fimIntervalo &&
+                listaNota3[posicao] >= inicioIntervalo && listaNota3[posicao] <= fimIntervalo){
+                    listaIntervaloAluno.push(listaAluno[posicao])
+                    listaIntervaloNota1.push(listaNota1[posicao])
+                    listaIntervaloNota2.push(listaNota2[posicao])
+                    listaIntervaloNota3.push(listaNota3[posicao])
+
+
+                    intervalos.innerHTML += `O aluno ${listaAluno[posicao]} ficou com a nota ${listaNota1[posicao]}<br>
+                    O aluno ${listaAluno[posicao]} ficou com a nota ${listaNota2[posicao]}<br>
+                    O aluno ${listaAluno[posicao]} ficou com a nota ${listaNota3[posicao]}<br>`
+                }
+
+                if (maiorNotaAC1 < listaNota1[posicao]) {
+                    maiorNotaAC1 = listaNota1[posicao]
+                }
+
+                if (maiorNotaAC2 < listaNota2[posicao]) {
+                    maiorNotaAC2 = listaNota2[posicao]
+                }
+
+                if (maiorNotaAC3 < listaNota3[posicao]) {
+                    maiorNotaAC3 = listaNota3[posicao]
+                }
+
+                if (menorNotaAC1 > listaNota1[posicao]) {
+                    menorNotaAC1 = listaNota1[posicao]
+                }
+
+                if (menorNotaAC2 > listaNota2[posicao]) {
+                    menorNotaAC2 = listaNota2[posicao]
+                }
+
+                if (menorNotaAC3 > listaNota3[posicao]) {
+                    menorNotaAC3 = listaNota3[posicao]
+                }
+
+                somaMedia = listaNota1[posicao] + listaNota2[posicao] + listaNota3[posicao]
+
+            }
+
+            var media = somaMedia / listaNota1.length;
+
+            intervalos.innerHTML += `<br>Total de alunos registrados: ${listaAluno.length}
+            <br>
+            Total de alunos listado: ${listaIntervaloAluno.length} (com nota no intervalo informado) 
+            <br>
+            Maior Nota AC1: ${maiorNotaAC1} 
+            <br>
+            Maior Nota AC2: ${maiorNotaAC2} 
+            <br>
+            Maior Nota AC3: ${maiorNotaAC3} 
+            <br>
+            Menor Nota AC1: ${menorNotaAC1} 
+            <br>
+            Menor Nota AC2: ${menorNotaAC2} 
+            <br>
+            Menor Nota AC3: ${menorNotaAC3} 
+            <br>
+            Média da Nota: ${media}`
+        }
+    }
+</script>

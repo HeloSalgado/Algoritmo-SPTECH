@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores 12</title>
+</head>
+
+<body>
+    Informe o nome de seus filhos:
+    <input id="nome_filho">
+    <button onclick="cadastrarFilho()">Cadastrar</button><br>
+    <button onclick="atualizarFamilia()">Atualizar família</button><br>
+    <div id="familia"></div>
+</body>
+
+</html>
+<script>
+    var listaFilhos = []
+
+    function cadastrarFilho() {
+        var filho = nome_filho.value
+        var nomeIgual = false;
+
+        for (var posicao = 0; posicao < listaFilhos.length; posicao += 1) {
+
+            if (filho == listaFilhos[posicao]) {
+                nomeIgual = true
+            }
+        }
+
+        if (nomeIgual == true) {
+            alert(`Não pode mais de 1 filho com o mesmo nome!`);
+        } else {
+            listaFilhos.push(filho);
+        }
+
+    }
+
+    function atualizarFamilia() {
+        familia.innerHTML = ` Você tem ${listaFilhos.length} filhos <br>
+        Seu custo mensal será aproximadamente R$${listaFilhos.length * 3000} se colocá-los em escola particular ou R$${listaFilhos.length * 1500} se eles estudarem em escola pública`;
+    }
+</script>

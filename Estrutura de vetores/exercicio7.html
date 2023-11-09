@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores 7</title>
+</head>
+
+<body>
+    Informe os filmes que mais gosta: <input id="input_filme"><br>
+    <button onclick="cadastrarFilme()">Cadastrar</button>
+    <div id="filmesFav"></div>
+</body>
+
+</html>
+<script>
+    var listaFilmes = [];
+    var posicao = 0;
+
+    function cadastrarFilme() {
+        listaFilmes.push(input_filme.value)
+
+        for (; posicao < listaFilmes.length; posicao += 1) {
+            if (posicao % 2 == 0) {
+                filmesFav.innerHTML += `<span style="color: blue;">${listaFilmes[posicao]}</span><br>`;
+            } else {
+                filmesFav.innerHTML += `<span style="color: red;">${listaFilmes[posicao]}</span><br>`;
+            }
+        }
+
+    }
+</script>

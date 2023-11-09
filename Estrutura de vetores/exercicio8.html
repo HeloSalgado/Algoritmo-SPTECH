@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores 8</title>
+</head>
+
+<body>
+    Informe os nomes dos alunos: <input id="nome_alunos">
+    <button onclick="cadastrarAluno()">Cadastrar</button><br>
+    <div id="alunosCadastrados"></div>
+</body>
+
+</html>
+<script>
+    var listaAlunos = [];
+
+    function cadastrarAluno() {
+        listaAlunos.push(nome_alunos.value);
+
+        alunosCadastrados.innerHTML = '';
+
+        for (var posicao = listaAlunos.length - 1; posicao >= 0; posicao -= 1) {
+            alunosCadastrados.innerHTML += `${listaAlunos[posicao]}<br>`;
+        }
+    }
+</script>

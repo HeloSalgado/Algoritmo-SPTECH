@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números aleatórios</title>
+</head>
+<body>
+    <button onclick="jogarJoKenPo()">Jogar</button>
+    <div id="jogoPPT"></div>
+</body>
+</html>
+<script>
+    var listaJogo = ['../Números aleatórios/pedra.png', '../Números aleatórios/tesoura.png', '../Números aleatórios/papel.png']
+    function jogarJoKenPo(){
+        jogoPPT.innerHTML = `<img style="height: 200px;" src="${listaJogo[parseInt(Math.random() * listaJogo.length)]}">`
+    }
+</script>

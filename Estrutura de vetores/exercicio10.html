@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores 10</title>
+</head>
+
+<body>
+    Informe os ônibus que pegou na semana:
+    <input id="input_busao">
+    <button onclick="gravarBusao()">Gravar busão</button><br>
+    Pesquise por uma linha:
+    <input id="input_pesquisa">
+    <button onclick="pesquisarLinha()">Pesquisar</button><br>
+    <div id="linhasOnibus"></div>
+</body>
+
+</html>
+<script>
+    var listaBusao = [];
+
+    function gravarBusao() {
+        listaBusao.push(input_busao.value);
+
+        linhasOnibus.innerHTML = '';
+
+        for (var posicao = listaBusao.length - 1; posicao >= 0; posicao -= 1) {
+            linhasOnibus.innerHTML += `${listaBusao[posicao]}<br>`;
+        }
+    }
+
+    function pesquisarLinha() {
+        var linhaExiste = false;
+        var listaRepetida = [];
+
+        for (var posicao = 0; posicao < listaBusao.length; posicao += 1) {
+            var pesquisaLinha = input_pesquisa.value;
+
+            if (listaBusao[posicao] == pesquisaLinha) {
+                linhaExiste = true;
+                listaRepetida.push(posicao + 1);
+            }
+        }
+
+        if (linhaExiste == true) {
+            linhasOnibus.innerHTML += `Você já pegou essa linha ${listaRepetida.length} vezes, nessa ordem: ${listaRepetida}<br>`;
+        } else {
+            linhasOnibus.innerHTML += `Você nunca pegou essa linha.`;
+        }
+    }
+</script>

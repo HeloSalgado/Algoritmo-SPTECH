@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores 9</title>
+</head>
+
+<body>
+    Informe o nome de cada projeto que já criou: <input id="nome_projeto">
+    <button onclick="registrarProjeto()">Registrar projeto</button>
+    <button onclick="mostrarProjetos()">Mostrar projetos</button><br>
+    <div id="projetos"></div>
+</body>
+
+</html>
+<script>
+    var listaProjeto = [];
+
+    function registrarProjeto() {
+        listaProjeto.push(nome_projeto.value)
+        var profissional = '';
+
+        if (listaProjeto.length >= 0 && listaProjeto.length <= 4 ) {
+            profissional = 'Júnior'
+        } else if (listaProjeto.length >= 5 && listaProjeto.length <= 12){
+            profissional = 'Pleno'
+        } else {
+            profissional = 'Sênior'
+        }
+
+        projetos.innerHTML = `Você já fez ${listaProjeto.length} projetos. Por isso você é um profissional ${profissional}.<br>`;
+
+    }
+
+    function mostrarProjetos(){
+        for(var posicao = listaProjeto.length - 1; posicao >= 0; posicao -= 1){
+            projetos.innerHTML += `${listaProjeto[posicao]}<br>`;
+        }   
+    }
+</script>

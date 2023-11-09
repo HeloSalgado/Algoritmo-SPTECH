@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números aleatórios</title>
+</head>
+<body>
+    <button onclick="sortearTime()">Sortear time</button>
+    <div id="timeSorteado"></div>
+</body>
+</html>
+<script>
+    var listaTime = ['../Números aleatórios/spfc.jpg', '../Números aleatórios/santos.png', '../Números aleatórios/palmeiras.webp', '../Números aleatórios/corinthians.png']
+
+    function sortearTime() {
+        timeSorteado.innerHTML = `<img style="height: 150px;" src="${listaTime[parseInt(Math.random() * listaTime.length)]}">`
+    }
+</script>

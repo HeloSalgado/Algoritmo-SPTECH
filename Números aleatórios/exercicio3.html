@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números aleatórios</title>
+</head>
+<body>
+    <button onclick="jogarDado()">Jogar dado</button><br><br>
+    <div id="dado" style="text-align: center; font-size: 20px; width: 100px; height: 100px; border: 2px solid red;"></div>
+</body>
+</html>
+<script>
+    function jogarDado() {
+        dado.innerHTML = parseInt(Math.random() * 20 + 1)
+    }
+</script>

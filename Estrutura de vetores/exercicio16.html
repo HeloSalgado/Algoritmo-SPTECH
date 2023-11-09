@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=10">
+    <title>Vetores 16</title>
+</head>
+<body>
+    Digite um número qualquer: <input id="num_usuario"><br>
+    <button onclick="analisarHistorico()">Analisar histórico</button>
+    <div id="historicoNumero"></div>
+</body>
+</html>
+<script>
+    var listaNumeros = [];
+
+    function analisarHistorico(){
+        listaNumeros.push(Number(num_usuario.value))
+
+        historicoNumero.innerHTML = '';
+
+        var maiorNumero = listaNumeros[0];
+        var menorNumero = listaNumeros[0];
+
+        for (var posicao = 0; posicao < listaNumeros.length; posicao++){
+            historicoNumero.innerHTML += `${posicao + 1}º Número: ${listaNumeros[posicao]}<br>`;
+
+            if (maiorNumero < listaNumeros[posicao]) {
+                maiorNumero = listaNumeros[posicao]
+            } 
+             
+            if (menorNumero > listaNumeros[posicao]) {
+                menorNumero = listaNumeros[posicao]
+            }
+        }
+
+        historicoNumero.innerHTML += `<br>
+        Maior: ${maiorNumero} <br>
+        Menor: ${menorNumero}`
+    }
+</script>

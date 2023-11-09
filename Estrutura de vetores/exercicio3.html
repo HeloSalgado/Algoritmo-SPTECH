@@ -8,10 +8,10 @@
 </head>
 
 <body>
-    Digite bairros em que você morou: <input id="input_bairros"><br>
+    Digite bairros em que você morou: <input id="input_bairros">
     <button onclick="cadastrarBairro()">Cadastrar bairro</button><br>
-    Número do local: <input id="num_lista" type="number" min="1"><br>
-    <button onclick="relembrarMoradia()">Relembrar moradia</button>
+    Número do local: <input id="num_lista" type="number" min="1">
+    <button onclick="relembrarMoradia()">Relembrar moradia</button><br>
     <div id="bairrosUsuario"></div>
 </body>
 
@@ -28,7 +28,7 @@
         bairrosUsuario.innerHTML = '';
         var numeroLista = Number(num_lista.value);
 
-        for (var posicao = 1; posicao < (listaBairros.length + 1); posicao += 1) {
+        for (var posicao = 0; posicao <= listaBairros.length; posicao += 1) {
             if (numeroLista == posicao) {
                 bairrosUsuario.innerHTML = listaBairros[posicao - 1];
             }

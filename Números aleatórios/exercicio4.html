@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números aleatórios</title>
+</head>
+<body>
+    <button onclick="sortearNota()">Sortear nota para aluno</button>
+    <div id="notaAluno"></div>
+</body>
+</html>
+<script>
+    function sortearNota(){
+        notaAluno.innerHTML = (Math.random() * 11).toFixed(2)
+    }
+</script>

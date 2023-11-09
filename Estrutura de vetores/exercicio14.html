@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores</title>
+</head>
+
+<body>
+    Nome do produto: <input id="nome_produto"><br>
+    Preço de compra: <input id="preco_compra"><br>
+    <button onclick="cadastrarNoEstoque()">Cadastrar</button>
+    <button onclick="relatorioEstoque()">Relatóorio do estoque</button>
+    <div id="estoque"></div>
+</body>
+
+</html>
+<script>
+    var listaNome = []
+    var listaPreco = []
+
+    function cadastrarNoEstoque() {
+        listaNome.push(nome_produto.value);
+        listaPreco.push(preco_compra.value);
+    }
+
+
+    function relatorioEstoque() {
+        var venda = listaPreco
+
+        estoque.innerHTML = `Total de produtos: ${listaNome.length} <br>`;
+
+        for (var repeticao = 0; repeticao < listaNome.length && repeticao < listaPreco.length; repeticao += 1) {
+            var venda = listaPreco[repeticao] * 1.25
+            estoque.innerHTML += `Produto ${repeticao + 1}: ${listaNome[repeticao]} <br>
+            Preço de compra: R$${listaPreco[repeticao]}. Vender por R$${venda}<br>`
+        }
+
+    }
+</script>
